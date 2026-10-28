@@ -60,7 +60,7 @@ export const programmes: Programme[] = [
   {
     id: "ai-for-good-educators",
     title: "AI for Good (Educators)",
-    url: "https://aisingapore.org/talent/ai-ready-asean/",
+    url: "https://learn.aisingapore.org/ai-for-good-educator/",
     collaborators: ["Meta"],
     targetCountries: "Malaysia, Philippines, Thailand",
     highlights: [
