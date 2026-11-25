@@ -35,6 +35,20 @@ const partners: Partner[] = [
     name: "Brain Bar",
   },
   {
+    name: "Cognizant",
+    url: "https://www.cognizant.com/",
+    category: "Industry",
+  },
+  {
+    name: "e2i",
+    url: "https://www.e2i.com.sg/",
+  },
+  {
+    name: "Temasek Foundation",
+    url: "https://www.temasekfoundation.org.sg/",
+    category: "Philanthropy",
+  },
+  {
     name: "Amazon Web Services",
     url: "https://aws.amazon.com/",
     category: "Industry",
