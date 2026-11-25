@@ -64,7 +64,7 @@ const partners: Partner[] = [
     category: "Multilateral",
   },
   {
-    name: "Melo",
+    name: "Melo Foundation",
   },
   { name: "Meta", url: "https://www.meta.com/", category: "Industry" },
   {
