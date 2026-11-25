@@ -33,10 +33,11 @@ const partners: Partner[] = [
   },
   {
     name: "Brain Bar",
+    url: "https://brainbar.sg/",
   },
   {
     name: "Cognizant",
-    url: "https://www.cognizant.com/",
+    url: "https://www.cognizant.com/sg/en",
     category: "Industry",
   },
   {
@@ -60,12 +61,12 @@ const partners: Partner[] = [
   },
   {
     name: "International Telecommunication Union (ITU)",
-    url: "https://www.itu.int/",
+    url: "https://www.itu.int/en/Pages/default.aspx",
     category: "Multilateral",
   },
   {
     name: "Melo Foundation",
-    url: "#",
+    url: "https://www.melo.org/",
   },
   { name: "Meta", url: "https://www.meta.com/", category: "Industry" },
   {
