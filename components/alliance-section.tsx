@@ -2,8 +2,8 @@ import { ExternalLink } from "lucide-react";
 
 type Partner = {
   name: string;
-  url: string;
-  category: string;
+  url?: string;
+  category?: string;
 };
 
 /**
@@ -12,6 +12,8 @@ type Partner = {
  *
  * `category` isn't rendered today; it's kept because the upstream project
  * carries it, so the two stay easy to reconcile.
+ *
+ * Partners without a `url` render as plain text instead of a link.
  */
 const partners: Partner[] = [
   {
@@ -30,6 +32,9 @@ const partners: Partner[] = [
     category: "Philanthropy Network",
   },
   {
+    name: "Brain Bar",
+  },
+  {
     name: "Amazon Web Services",
     url: "https://aws.amazon.com/",
     category: "Industry",
@@ -38,6 +43,14 @@ const partners: Partner[] = [
     name: "Google.org",
     url: "https://www.google.org/",
     category: "Philanthropy",
+  },
+  {
+    name: "International Telecommunication Union (ITU)",
+    url: "https://www.itu.int/",
+    category: "Multilateral",
+  },
+  {
+    name: "Melo",
   },
   { name: "Meta", url: "https://www.meta.com/", category: "Industry" },
   {
@@ -84,25 +97,37 @@ export function AllianceSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {[leftColumn, rightColumn].map((column, columnIndex) => (
               <div key={columnIndex} className="space-y-3">
-                {column.map((partner) => (
-                  <a
-                    key={partner.name}
-                    href={partner.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl hover:bg-secondary hover:-translate-x-0.5 transition-all duration-200 group"
-                  >
-                    <div className="flex items-center gap-3">
+                {column.map((partner) =>
+                  partner.url ? (
+                    <a
+                      key={partner.name}
+                      href={partner.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl hover:bg-secondary hover:-translate-x-0.5 transition-all duration-200 group"
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="w-2 h-2 rounded-full bg-primary shrink-0"></span>
+                        <span className="text-sm text-foreground font-medium group-hover:text-primary transition-colors">
+                          {partner.name}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2 shrink-0">
+                        <ExternalLink className="w-3 h-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+                      </div>
+                    </a>
+                  ) : (
+                    <div
+                      key={partner.name}
+                      className="flex items-center gap-3 px-4 py-3"
+                    >
                       <span className="w-2 h-2 rounded-full bg-primary shrink-0"></span>
-                      <span className="text-sm text-foreground font-medium group-hover:text-primary transition-colors">
+                      <span className="text-sm text-foreground font-medium">
                         {partner.name}
                       </span>
                     </div>
-                    <div className="flex items-center gap-2 shrink-0">
-                      <ExternalLink className="w-3 h-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
-                    </div>
-                  </a>
-                ))}
+                  )
+                )}
               </div>
             ))}
           </div>
