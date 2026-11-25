@@ -65,6 +65,7 @@ const partners: Partner[] = [
   },
   {
     name: "Melo Foundation",
+    url: "#",
   },
   { name: "Meta", url: "https://www.meta.com/", category: "Industry" },
   {
